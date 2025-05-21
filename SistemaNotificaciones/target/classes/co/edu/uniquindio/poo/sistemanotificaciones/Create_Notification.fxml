@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.sistemanotificaciones.Controller.CreateNotificationController"
+      spacing="10" styleClass="form-container">
+
+    <Label text="Crear Nueva Notificación" styleClass="title" />
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30" />
+            <ColumnConstraints percentWidth="70" />
+        </columnConstraints>
+
+        <Label text="Email del usuario:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="emailField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Tipo de usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <RadioButton text="Cliente" userData="CLIENT" fx:id="clientRadio" selected="true" />
+            <RadioButton text="Administrador" userData="ADMIN" fx:id="adminRadio" />
+        </HBox>
+
+        <Label text="Estado:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <CheckBox fx:id="blockedCheckbox" text="Bloqueado" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Mensaje:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextArea fx:id="messageArea" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Método de envío:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <ComboBox fx:id="methodComboBox" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Enviar" onAction="#handleSendNotification" styleClass="primary-button" />
+        <Button text="Cancelar" onAction="#handleCancel" />
+    </HBox>
+</VBox>

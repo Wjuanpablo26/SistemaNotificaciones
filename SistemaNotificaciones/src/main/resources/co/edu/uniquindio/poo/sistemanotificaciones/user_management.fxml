@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.sistemanotificaciones.Controller.UserManagementController"
+      spacing="10" styleClass="form-container">
+
+    <Label text="Gestión de Usuarios" styleClass="title" />
+
+    <TableView fx:id="usersTable">
+        <columns>
+            <TableColumn text="Email" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="email" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Tipo" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="userType" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Estado" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="status" /></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Bloquear/Desbloquear" onAction="#handleToggleBlock" styleClass="primary-button" />
+        <Button text="Crear Usuario" onAction="#handleCreateUser" />
+        <Button text="Cerrar" onAction="#handleClose" />
+    </HBox>
+</VBox>
